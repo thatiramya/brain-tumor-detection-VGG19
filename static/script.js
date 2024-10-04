@@ -14,7 +14,7 @@ document.querySelector('input[type="file"]').addEventListener('change', function
         reader.onload = function(e) {
             // Display the image or process it as needed
             const outputImageDiv = document.querySelector('.output-image');
-            outputImageDiv.innerHTML = `<img src="${e.target.result}" alt="Uploaded Image" style="max-width: 100%; height: auto;">`;
+            outputImageDiv.innerHTML = `<img src="${e.target.result}" alt="Uploaded Image" style="max-width: 100%; height: 100px;">`;
         };
         reader.readAsDataURL(file);
     }
