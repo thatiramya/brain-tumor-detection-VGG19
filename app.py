@@ -204,6 +204,25 @@ class PGGAN:
             if epoch % sample_interval == 0:
                 print(f"{epoch} [D loss: {d_loss[0]} | acc.: {100*d_loss[1]}] [G loss: {g_loss}]")
 
+
+# @app.route('/predict', methods=['POST'])
+# def predict():
+#     if 'image' not in request.files:
+#         return "No file part"
+    
+#     file = request.files['image']
+#     if file.filename == '':
+#         return "No selected file"
+    
+#     if file and allowed_file(file.filename):
+#         filename = secure_filename(file.filename)
+#         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+#         # Add your tumor detection logic here
+#         return redirect(url_for('results'))
+#     return "Error processing the file"
+
+
+
 @app.route('/predict', methods=['POST'])
 def upload_file():
     if request.method == 'POST':
